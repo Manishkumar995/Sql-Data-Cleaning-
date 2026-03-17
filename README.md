@@ -66,6 +66,33 @@ set company= trim(company);
 select distinct industry
 from staging_layoffs2;
 
+select company, trim(company)
+from staging_layoffs2;
+
+update staging_layoffs2
+set company= trim(company);
+
+select*
+from staging_layoffs2
+where industry like 'crypto%';
+
+update staging_layoffs2
+set industry='crypto'
+where industry like 'crypto';
+ 
+select country, trim(trailing '.' from country)
+from staging_layoffs2
+where country like 'united states%';
+
+update staging_layoffs2
+set country =trim(trailing '.' from country)
+where country like 'united states%';
+
+SELECT 
+    `date`
+FROM
+    staging_layoffs2;
+
 
 
  
